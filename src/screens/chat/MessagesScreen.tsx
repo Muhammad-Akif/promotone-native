@@ -164,7 +164,10 @@ export default function ChatScreen1({ navigation }) {
                               ? 'flex-end'
                               : 'flex-start',
                           marginHorizontal: 10,
-                          padding: 10,
+
+                          paddingHorizontal: item.isItOffer ? 5 : 10,
+                          paddingVertical: item.isItOffer ? 5 : 10,
+
                           borderRadius: 8,
                           borderBottomLeftRadius:
                             item.isItMineMessage ? 8 : 0,
@@ -175,7 +178,7 @@ export default function ChatScreen1({ navigation }) {
                         {
                           item.isItOffer ? (
                             <>
-                              <View style={{ backgroundColor: 'rgba(186, 148, 249, 0.68)', padding: 10 }}>
+                              <View style={{ backgroundColor: 'rgba(186, 148, 249, 0.68)', padding: 10, borderRadius: 10 }}>
                                 <Text
                                   style={{
                                     color: '#fff',
