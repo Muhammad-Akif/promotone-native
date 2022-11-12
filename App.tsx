@@ -14,11 +14,7 @@ import Onboarding from './src/screens/onboarding/Onboarding';
 import Register from './src/screens/onboarding/Register';
 import ClassSelect from './src/screens/onboarding/ClassSelect';
 import Start from './src/screens/onboarding/Start';
-import Header from './src/components/Message/Header';
-import Tabs from './src/components/Message/Tabs';
-import Searchbar from './src/components/Message/RequestSearchBar';
-import RequestHeader from './src/components/Message/RequestHeader';
-
+import Messages from './src/screens/Messages';
 
 LogBox.ignoreLogs([
   "[react-native-gesture-handler] Seems like you\'re using an old API with gesture components, check out new Gestures system!",
@@ -45,11 +41,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style='dark' />
-      {/* <Header /> */}
-      <RequestHeader />
-      <Tabs />
-      <Searchbar />
+      <Messages />
       {/* <StatusBar style='dark' />
       <ThemeProvider theme={theme}>
         <UserAuthContextProvider>
@@ -57,7 +49,7 @@ export default function App() {
             <OnboardingNavigator />
           </NavigationContainer>
         </UserAuthContextProvider> */}
-        {/* <Onboarding /> */}
+      {/* <Onboarding /> */}
       {/* </ThemeProvider> */}
     </>
   );
