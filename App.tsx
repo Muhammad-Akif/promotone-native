@@ -17,6 +17,7 @@ import Start from './src/screens/onboarding/Start';
 import Header from './src/components/Message/Header';
 import Tabs from './src/components/Message/Tabs';
 import Cards from './src/components/Message/Cards';
+import ChatNavigator from './src/navigation/ChatNavigator';
 
 
 LogBox.ignoreLogs([
@@ -44,7 +45,7 @@ export default function App() {
 
   return (
     <>
-      <StatusBar style='dark' />
+      {/* <StatusBar style='dark' />
       <Header />
       <Tabs />
       <Cards />
@@ -52,7 +53,10 @@ export default function App() {
       <Cards />
       <Cards />
       <Cards />
-      <Cards />
+      <Cards /> */}
+      <NavigationContainer>
+        <ChatNavigator />
+      </NavigationContainer>
       {/* <StatusBar style='dark'/>
     <ThemeProvider theme={theme}>
       <UserAuthContextProvider>
