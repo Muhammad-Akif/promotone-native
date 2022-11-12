@@ -1,5 +1,5 @@
 import { View, Text, Image } from 'react-native';
-import { StyleSheet } from "react-native"
+import { StyleSheet, TouchableOpacity } from "react-native"
 
 interface Props {
     url: any;
@@ -10,9 +10,11 @@ interface Props {
 }
 
 const Cards = (props: Props) => {
-    let { url, time, name, desc, count } = props
+    let { url, time, name, desc, count, navigation } = props
     return (
-        <View style={styles.Container}>
+        <TouchableOpacity style={styles.Container} onPress={() => {
+            navigation.navigate('Messages');
+        }}>
             <Image
                 style={styles.logo}
                 source={{
@@ -30,7 +32,7 @@ const Cards = (props: Props) => {
                     <Text style={styles.count}>{count}</Text>
                 </View>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

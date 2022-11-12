@@ -55,18 +55,16 @@ export default function App() {
       <NavigationContainer>
         <ChatNavigator />
       </NavigationContainer>
-      {/* <StatusBar style='dark'/>
-    <ThemeProvider theme={theme}>
-      <UserAuthContextProvider>
-        <NavigationContainer>
-          <OnboardingNavigator />
-        </NavigationContainer>
-      </UserAuthContextProvider> */}
-      {/* <Onboarding/> */}
+      {/* <StatusBar style='dark' />
+      <ThemeProvider theme={theme}>
+        <UserAuthContextProvider>
+          <NavigationContainer>
+            <OnboardingNavigator />
+          </NavigationContainer>
+        </UserAuthContextProvider>
+      </ThemeProvider> */}
 
       {/* <Messages /> */}
-
-      {/* </ThemeProvider> */}
     </>
   );
 }

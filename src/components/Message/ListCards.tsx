@@ -1,12 +1,12 @@
 import { FlatList } from 'react-native';
 import Cards from './Cards';
 
-const ListCards = ({ data }: { data: any }) => {
+const ListCards = ({ data, navigation }: { data: any }) => {
 
   const ItemView = ({ item }: { item: any }) => {
     return (
       // Flat List Item 
-      <Cards {...item} />
+      <Cards {...item} navigation={navigation} />
     );
   };
 

@@ -66,12 +66,12 @@ interface Props {
     setInbox: any;
 }
 const Inbox = (props: Props) => {
-    let { isInbox, setInbox } = props
+    let { isInbox, setInbox, navigation } = props
     return (
         <>
             <InboxHeader />
-            <Tabs isInbox={isInbox} setInbox={setInbox}/>
-            <ListCards data={data}/>
+            <Tabs isInbox={isInbox} setInbox={setInbox} />
+            <ListCards data={data} navigation={navigation} />
         </>
     )
 }

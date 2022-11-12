@@ -110,9 +110,11 @@ export default function ChatScreen1({ navigation }) {
 
           {/* Left Side */}
           <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>
-            <View>
+            <TouchableOpacity onPress={() => {
+              navigation.goBack()
+            }}>
               <AntDesign name="arrowleft" size={24} color="black" />
-            </View>
+            </TouchableOpacity>
             <View style={{ marginLeft: '13%', flex: 1 }}>
               <Text style={{ fontSize: 17, fontWeight: '700', letterSpacing: 0.8 }} numberOfLines={1}>{name}</Text>
             </View>
