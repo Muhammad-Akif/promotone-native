@@ -26,7 +26,7 @@ const Cards = (props: Props) => {
                         <Text style={{ fontWeight: 'bold' }}>{ time }</Text>
                     </View>
                     <View style={styles.Desc}>
-                        <Text style={{ fontSize: 13, fontWeight: 'bold', lineHeight: 18, color: "#5E5958" }}>{ desc }</Text>
+                        <Text style={{ fontSize: 13, fontWeight: 'bold', lineHeight: 18, width:'92%', color: "#5E5958" }}>{ desc }</Text>
                         <Text style={styles.count}>{count}</Text>
                     </View>
                 </View>
@@ -52,15 +52,17 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     count: {
+        position: "absolute",
         textAlign: "center",
-        width: 18,
-        height: 18,
+        width: 20,
+        height: 20,
+        paddingTop: 2,
+        top:2,
+        right: -5,
         borderRadius: 50,
         backgroundColor: '#A020F0',
         color: '#eeee',
-        fontSize: 12,
-        marginLeft: 4,
-        marginTop: -5
+        fontSize: 10,
     },
     Row: {
         display: "flex",
@@ -78,6 +80,7 @@ const styles = StyleSheet.create({
         marginHorizontal: 10,
         justifyContent: "space-between",
         paddingTop: 6,
+        position: 'relative'
     },
     Inbox: {
         fontSize: 16,
