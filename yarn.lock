@@ -6703,11 +6703,6 @@ react-native-gradle-plugin@^0.0.7:
   resolved "https://registry.yarnpkg.com/react-native-gradle-plugin/-/react-native-gradle-plugin-0.0.7.tgz#96602f909745239deab7b589443f14fce5da2056"
   integrity sha512-+4JpbIx42zGTONhBTIXSyfyHICHC29VTvhkkoUOJAh/XHPEixpuBduYgf6Y4y9wsN1ARlQhBBoptTvXvAFQf5g==
 
-react-native-keyboard-spacer@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/react-native-keyboard-spacer/-/react-native-keyboard-spacer-0.4.1.tgz#46f18a320432098a25ea9fa89f5143dd254d332d"
-  integrity sha512-QPX2El4U2VfhRQm1YOTrTsOJIDjJBydpdz87jmiFOxBmKJfVn7CwiTzzipKTiLwfAFoUYQ+sB/xcnIhRZPF+SQ==
-
 react-native-pager-view@^6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-6.1.0.tgz#6cb13fb6f2db8836c89ee8261b07603e97527ceb"

@@ -17,7 +17,7 @@ import {
 } from 'react-native';
 import Constants from 'expo-constants';
 import DialogInput from 'react-native-dialog-input';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
+import KeyboardSpacer from '../../components/KeyboardSpacer';
 
 export default function ChatScreen1({ navigation }) {
 
