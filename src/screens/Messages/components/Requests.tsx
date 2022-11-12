@@ -70,7 +70,7 @@ interface Props {
 }
 
 const Requests = (props: Props) => {
-    let { isInbox, setInbox } = props
+    let { isInbox, setInbox, navigation } = props
     const [search, setSearch] = useState('');
     const [filteredDataSource, setFilteredDataSource] = useState(data);
     const [masterDataSource, setMasterDataSource] = useState(data);
