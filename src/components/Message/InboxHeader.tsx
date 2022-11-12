@@ -5,7 +5,7 @@ import { StyleSheet } from "react-native"
 const Header = () => {
   return (
     <View style = {styles.Container}>
-        <AntDesign name="search1" size={24} color="black" styles={{ transform: 'rotateZ(180deg)'}} />
+        <AntDesign name="search1" size={24} color="black" style={{ transform: [{rotateY: '180deg'}]}} />
         <Text style={{ fontSize: 24, fontWeight: 'bold'}}>Message</Text>
         <AntDesign name="setting" size={24} color="black" />
     </View>

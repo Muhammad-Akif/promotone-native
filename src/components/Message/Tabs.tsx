@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "space-evenly",
       alignItems: "center",
+      paddingBottom: 10
     },
     Inbox: {
         fontSize: 16, 

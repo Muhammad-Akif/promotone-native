@@ -16,7 +16,8 @@ import ClassSelect from './src/screens/onboarding/ClassSelect';
 import Start from './src/screens/onboarding/Start';
 import Header from './src/components/Message/Header';
 import Tabs from './src/components/Message/Tabs';
-import Cards from './src/components/Message/Cards';
+import Searchbar from './src/components/Message/RequestSearchBar';
+import RequestHeader from './src/components/Message/RequestHeader';
 
 
 LogBox.ignoreLogs([
@@ -45,22 +46,18 @@ export default function App() {
   return (
     <>
       <StatusBar style='dark' />
-      <Header />
+      {/* <Header /> */}
+      <RequestHeader />
       <Tabs />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      {/* <StatusBar style='dark'/>
-    <ThemeProvider theme={theme}>
-      <UserAuthContextProvider>
-        <NavigationContainer>
-          <OnboardingNavigator />
-        </NavigationContainer>
-      </UserAuthContextProvider> */}
-      {/* <Onboarding/> */}
+      <Searchbar />
+      {/* <StatusBar style='dark' />
+      <ThemeProvider theme={theme}>
+        <UserAuthContextProvider>
+          <NavigationContainer>
+            <OnboardingNavigator />
+          </NavigationContainer>
+        </UserAuthContextProvider> */}
+        {/* <Onboarding /> */}
       {/* </ThemeProvider> */}
     </>
   );
