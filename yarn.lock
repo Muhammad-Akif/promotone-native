@@ -6673,6 +6673,11 @@ react-native-codegen@^0.69.2:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
+react-native-dialog-input@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-dialog-input/-/react-native-dialog-input-1.0.8.tgz#6813d3b158bbb85d83a94310f38695d9f2b02682"
+  integrity sha512-W9YNMt6r+rUUMDEkOR1WMuGfSJw97ujB8H1xp8TjJTOnYVSlsf4aEP6t+J8tVk3XZaDcTawXgDjxH6E1WVWRog==
+
 react-native-gesture-handler@~2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-2.5.0.tgz#61385583570ed0a45a9ed142425e35f8fe8274fb"

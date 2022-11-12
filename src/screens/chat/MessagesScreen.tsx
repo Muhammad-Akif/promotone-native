@@ -1,22 +1,6 @@
-// import React from 'react';
-// import { StyleSheet, View, Text } from 'react-native'
-// import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-
-// const MessagesScreen = props => {
-//   const name = 'Chief So';
-//   return (
-
-//   )
-// }
-
-// export default MessagesScreen
-
-// const styles = StyleSheet.create({
-
-// })
-
+// Using Reavt Native Dialog just in order to take offer
 import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   Text,
@@ -31,9 +15,11 @@ import {
   Alert,
 } from 'react-native';
 import Constants from 'expo-constants';
-
+import DialogInput from 'react-native-dialog-input';
 export default function ChatScreen1({ navigation }) {
+
   const name = 'Chief So';
+  const [showModal, setShowModal] = useState(false);
   const [chatUser] = useState({
     name: 'Robert Henry',
     profile_image: 'https://randomuser.me/api/portraits/men/0.jpg',
@@ -89,22 +75,32 @@ export default function ChatScreen1({ navigation }) {
 
   const [inputMessage, setInputMessage] = useState('');
 
-  function sendMessage() {
-    if (inputMessage === '') {
+  function sendMessage(offerMessage, isItOffer) {
+    if (!inputMessage && !offerMessage) {
       return setInputMessage('');
     }
+
     setMessages([
       ...messages,
       {
         isItMineMessage: true,
-        message: inputMessage,
+        message: isItOffer ? offerMessage : inputMessage,
+        isItOffer: isItOffer ?? false
       },
     ]);
+
     setInputMessage('');
   }
 
   return (
     <>
+      <DialogInput isDialogVisible={showModal}
+        title={"Your Offer"}
+        message={"What you are offering?"}
+        hintInput={"Offer"}
+        submitInput={(inputText) => { sendMessage(inputText, true); setShowModal(false) }}
+        closeDialog={() => { setShowModal(false) }}>
+      </DialogInput>
       <View style={styles.screen}>
         {/* Header Starts */}
         <View style={{ height: 24, flexDirection: 'row', marginLeft: 17, marginRight: 14, marginTop: 12, marginBottom: 10, justifyContent: 'space-between', alignItems: 'center' }}>
@@ -121,9 +117,11 @@ export default function ChatScreen1({ navigation }) {
 
           {/* Right Side */}
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <View style={{ paddingRight: 6 }}>
+            <TouchableOpacity style={{ paddingRight: 6 }} onPress={() => {
+              setShowModal(true)
+            }}>
               <AntDesign name="plus" size={19} color="black" />
-            </View>
+            </TouchableOpacity>
             <View style={{ paddingRight: 4 }}>
               <AntDesign name="search1" size={16} color="black" />
             </View>
@@ -141,38 +139,68 @@ export default function ChatScreen1({ navigation }) {
             inverted={true}
             data={JSON.parse(JSON.stringify(messages)).reverse()}
             renderItem={({ item }) => {
-              console.log(item.isItMineMessage ? '#883FFF' : '#883FFF', 'asd')
               return (
-                <TouchableWithoutFeedback>
-                  <View style={{ marginTop: 20 }}>
-                    <View
-                      style={{
-                        maxWidth: Dimensions.get('screen').width * 0.8,
-                        backgroundColor: item.isItMineMessage ? '#883FFF' : '#BA94F9',
-                        alignSelf:
-                          item.isItMineMessage
-                            ? 'flex-end'
-                            : 'flex-start',
-                        marginHorizontal: 10,
-                        padding: 10,
-                        borderRadius: 8,
-                        borderBottomLeftRadius:
-                          item.isItMineMessage ? 8 : 0,
-                        borderBottomRightRadius:
-                          item.isItMineMessage ? 0 : 8,
-                      }}
-                    >
-                      <Text
+                <>
+                  {
+                    item.isItOffer && (
+                      <View style={{ flexDirection: 'row', alignItems: 'center', alignSelf: 'flex-end', marginTop: 20, marginRight: 30 }}>
+                        <TouchableOpacity style={{ width: 84, height: 22, marginRight: 9, backgroundColor: '#BA94F9', justifyContent: 'center', alignItems: 'center', borderRadius: 15 }}>
+                          <Text style={{ color: 'white' }}>accept</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={{ width: 84, height: 22, backgroundColor: '#883FFF', justifyContent: 'center', alignItems: 'center', borderRadius: 15 }}>
+                          <Text style={{ color: 'white' }}>modify</Text>
+                        </TouchableOpacity>
+                      </View>
+                    )
+                  }
+                  <TouchableWithoutFeedback>
+                    <View style={{ marginTop: 20 }}>
+                      <View
                         style={{
-                          color: '#fff',
-                          fontSize: 16,
+                          maxWidth: Dimensions.get('screen').width * 0.8,
+                          backgroundColor: item.isItMineMessage ? '#883FFF' : '#BA94F9',
+                          alignSelf:
+                            item.isItMineMessage
+                              ? 'flex-end'
+                              : 'flex-start',
+                          marginHorizontal: 10,
+                          padding: 10,
+                          borderRadius: 8,
+                          borderBottomLeftRadius:
+                            item.isItMineMessage ? 8 : 0,
+                          borderBottomRightRadius:
+                            item.isItMineMessage ? 0 : 8,
                         }}
                       >
-                        {item.message}
-                      </Text>
+                        {
+                          item.isItOffer ? (
+                            <>
+                              <View style={{ backgroundColor: 'rgba(186, 148, 249, 0.68)', padding: 10 }}>
+                                <Text
+                                  style={{
+                                    color: '#fff',
+                                    fontSize: 16,
+                                  }}
+                                >
+                                  {item.message}
+                                </Text>
+                              </View>
+                            </>
+                          ) : (
+                            <Text
+                              style={{
+                                color: '#fff',
+                                fontSize: 16,
+                              }}
+                            >
+                              {item.message}
+                            </Text>
+                          )
+                        }
+                      </View>
                     </View>
-                  </View>
-                </TouchableWithoutFeedback>
+                  </TouchableWithoutFeedback>
+                </>
               )
             }}
           />
@@ -198,7 +226,7 @@ export default function ChatScreen1({ navigation }) {
             </View>
           </View>
         </View>
-      </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback >
     </>
 
   );
