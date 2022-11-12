@@ -3,21 +3,21 @@ import {
   StyleSheet,
   TextInput,
 } from 'react-native';
-interface Props{
+interface Props {
   search: any;
   searchFilterFunction: any;
 }
 const RequestSearchBar = (props: Props) => {
-  const {search, searchFilterFunction} = props
+  const { search, searchFilterFunction } = props
 
   return (
     <>
-     <TextInput
-          style={styles.textInputStyle}
-          onChangeText={(text) => searchFilterFunction(text)}
-          value={search}
-          underlineColorAndroid="transparent"
-        />
+      <TextInput
+        style={styles.textInputStyle}
+        onChangeText={(text) => searchFilterFunction(text)}
+        value={search}
+        underlineColorAndroid="transparent"
+      />
     </>
   )
 }
@@ -33,6 +33,15 @@ const styles = StyleSheet.create({
     borderColor: '#808080',
     borderRadius: 50,
     backgroundColor: '#eee',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+
+    elevation: 7,
   },
 });
 
