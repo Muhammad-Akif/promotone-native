@@ -102,7 +102,7 @@ const Requests = (props: Props) => {
             <RequestHeader />
             <RequestSearchBar search={search} searchFilterFunction={searchFilterFunction} />
             <Tabs isInbox={isInbox} setInbox={setInbox} />
-            <ListCards data={filteredDataSource} navigation={navigation}/>
+            <ListCards data={filteredDataSource} navigation={navigation} />
         </>
     )
 }

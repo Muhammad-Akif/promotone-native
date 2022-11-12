@@ -3,6 +3,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { View } from 'react-native';
 import { StyleSheet } from "react-native"
+import Constants from 'expo-constants';
 
 const Header = () => {
     return (
@@ -24,7 +25,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         position: "relative",
         width: "60%",
-        height: 100,
+        height: 70,
+        marginTop: Constants.statusBarHeight - 8
     },
 })
 export default Header
