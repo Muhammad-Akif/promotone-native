@@ -14,6 +14,7 @@ import Onboarding from './src/screens/onboarding/Onboarding';
 import Register from './src/screens/onboarding/Register';
 import ClassSelect from './src/screens/onboarding/ClassSelect';
 import Start from './src/screens/onboarding/Start';
+import ChatNavigator from './src/navigation/ChatNavigator';
 import Messages from './src/screens/Messages';
 
 LogBox.ignoreLogs([
@@ -41,15 +42,30 @@ export default function App() {
 
   return (
     <>
-      <Messages />
+
       {/* <StatusBar style='dark' />
-      <ThemeProvider theme={theme}>
-        <UserAuthContextProvider>
-          <NavigationContainer>
-            <OnboardingNavigator />
-          </NavigationContainer>
-        </UserAuthContextProvider> */}
-      {/* <Onboarding /> */}
+      <Header />
+      <Tabs />
+      <Cards />
+      <Cards />
+      <Cards />
+      <Cards />
+      <Cards />
+      <Cards /> */}
+      <NavigationContainer>
+        <ChatNavigator />
+      </NavigationContainer>
+      {/* <StatusBar style='dark'/>
+    <ThemeProvider theme={theme}>
+      <UserAuthContextProvider>
+        <NavigationContainer>
+          <OnboardingNavigator />
+        </NavigationContainer>
+      </UserAuthContextProvider> */}
+      {/* <Onboarding/> */}
+
+      {/* <Messages /> */}
+
       {/* </ThemeProvider> */}
     </>
   );
