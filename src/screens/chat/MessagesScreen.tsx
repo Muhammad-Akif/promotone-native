@@ -1,5 +1,5 @@
 // Using Reavt Native Dialog just in order to take offer
-import { AntDesign, MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign, MaterialCommunityIcons, Feather } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import {
   StyleSheet,
@@ -13,9 +13,12 @@ import {
   FlatList,
   Dimensions,
   Alert,
+  Platform
 } from 'react-native';
 import Constants from 'expo-constants';
 import DialogInput from 'react-native-dialog-input';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
+
 export default function ChatScreen1({ navigation }) {
 
   const name = 'Chief So';
@@ -122,12 +125,12 @@ export default function ChatScreen1({ navigation }) {
             }}>
               <AntDesign name="plus" size={19} color="black" />
             </TouchableOpacity>
-            <View style={{ paddingRight: 4 }}>
+            <TouchableOpacity style={{ paddingRight: 4 }}>
               <AntDesign name="search1" size={16} color="black" />
-            </View>
-            <View>
+            </TouchableOpacity>
+            <TouchableOpacity>
               <MaterialCommunityIcons name="dots-vertical" size={21} color="black" />
-            </View>
+            </TouchableOpacity>
           </View>
         </View>
         {/* Header Ends */}
@@ -225,9 +228,15 @@ export default function ChatScreen1({ navigation }) {
                   sendMessage();
                 }}
               >
+                <Feather name="send" size={24} color="grey" />
               </TouchableOpacity>
             </View>
           </View>
+          {
+            Platform.OS === 'ios' && (
+              <KeyboardSpacer />
+            )
+          }
         </View>
       </TouchableWithoutFeedback >
     </>
