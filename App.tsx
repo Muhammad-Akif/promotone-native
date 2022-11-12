@@ -42,16 +42,6 @@ export default function App() {
 
   return (
     <>
-
-      {/* <StatusBar style='dark' />
-      <Header />
-      <Tabs />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards />
-      <Cards /> */}
       <NavigationContainer>
         <ChatNavigator />
       </NavigationContainer>
