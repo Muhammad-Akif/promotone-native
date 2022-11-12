@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     count: {
         position: "absolute",
         textAlign: "center",
-        width: 20,
-        height: 20,
-        paddingTop: 2,
+        width: 18,
+        height: 18,
+        paddingTop: 1.5,
         top:2,
         right: -5,
         borderRadius: 50,
