@@ -1,5 +1,5 @@
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button } from "react-native";
 import {
   OfferRequestScreen,
   OfferPendingScreen,
@@ -11,6 +11,7 @@ import {
 } from "../screens/offerInbox";
 import { createStackNavigator } from "@react-navigation/stack";
 import OfferTitle from "../screens/offerInbox/components/OfferTitle";
+import ChatNavigator from "./ChatNavigator";
 
 const Tab = createMaterialTopTabNavigator();
 const StackNav = createStackNavigator();
@@ -29,6 +30,12 @@ function TabWithHeader() {
         component={OfferTabNav}
         name={"offerTab"}
         options={{ title: "Offer Inbox" }}
+      />
+
+      <StackNav.Screen
+        component={ChatNavigator}
+        name={"ChatNav"}
+        options={{ title: "Offer Inbox", headerShown: false }}
       />
       <StackNav.Screen
         component={OfferCompleteScreen}
@@ -53,33 +60,38 @@ function TabWithHeader() {
     </StackNav.Navigator>
   );
 }
-function OfferTabNav() {
+function OfferTabNav(props: any) {
   return (
-    <Tab.Navigator
-      style={{ backgroundColor: "#fff" }}
-      screenOptions={{
-        tabBarActiveTintColor: "#000",
-        tabBarStyle: styles.tabStyle,
-        tabBarLabelStyle: styles.tabLabelStyle,
-        tabBarIndicatorStyle: styles.indicatorStyle,
-      }}
-    >
-      <Tab.Screen
-        name="request"
-        component={OfferRequestScreen}
-        options={{ tabBarLabel: "Outgoing" }}
-      />
-      <Tab.Screen
-        name="pending"
-        component={OfferPendingScreen}
-        options={{ tabBarLabel: "Incoming" }}
-      />
-      <Tab.Screen
-        name="complete"
-        component={OfferInProgress}
-        options={{ tabBarLabel: "In Progress" }}
-      />
-    </Tab.Navigator>
+    <>
+      <Button title="messages" onPress={() => {
+        props.navigation.navigate('ChatNav')
+      }} />
+      <Tab.Navigator
+        style={{ backgroundColor: "#fff" }}
+        screenOptions={{
+          tabBarActiveTintColor: "#000",
+          tabBarStyle: styles.tabStyle,
+          tabBarLabelStyle: styles.tabLabelStyle,
+          tabBarIndicatorStyle: styles.indicatorStyle,
+        }}
+      >
+        <Tab.Screen
+          name="request"
+          component={OfferRequestScreen}
+          options={{ tabBarLabel: "Outgoing" }}
+        />
+        <Tab.Screen
+          name="pending"
+          component={OfferPendingScreen}
+          options={{ tabBarLabel: "Incoming" }}
+        />
+        <Tab.Screen
+          name="complete"
+          component={OfferInProgress}
+          options={{ tabBarLabel: "In Progress" }}
+        />
+      </Tab.Navigator>
+    </>
   );
 }
 const styles = StyleSheet.create({

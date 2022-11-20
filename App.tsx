@@ -42,17 +42,14 @@ export default function App() {
 
   return (
     <>
-      <NavigationContainer>
-        <ChatNavigator />
-      </NavigationContainer>
-      {/* <StatusBar style='dark' />
+      <StatusBar style='dark' />
       <ThemeProvider theme={theme}>
         <UserAuthContextProvider>
           <NavigationContainer>
             <OnboardingNavigator />
           </NavigationContainer>
         </UserAuthContextProvider>
-      </ThemeProvider> */}
+      </ThemeProvider>
 
       {/* <Messages /> */}
     </>
